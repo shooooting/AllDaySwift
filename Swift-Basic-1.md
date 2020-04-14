@@ -288,4 +288,329 @@ type(of: str)
     ㄴ String타입 안에 num을 넣어서 실행시킬 수 있다. 이렇게 되면 타입은 string 타입으로 나온다.
 ```
 
-# + 
+# + Basic Operators
+
+## Terminology
+
+```
+let a = 123
+let b = 456
+let c: Int? = 789
+    ㄴ Int 뒤 ? 는 옵셔너리라고 한다.
+    ㄴ 값이 있을 수도 있고 없을 수도 있다.
+```
+
+```
+-a 단항 연산자 : 연산자가 하나
+-a 전위 표기법 : 연산자가 앞에 있는 것
+c! 후기 표기법 : 연산자가 뒤에 있는 것
+a + b 이항 연산자, 중위 표기법
+```
+```
+a > 0 ? "p" : "x"
+ㄴ a > 0 이게 true면 "p" false면 "x"
+```
+                                    
+## Assignment Operators
+```
+var value = 0
+value = value + 10
+value = value - 5
+value = value * 2
+value = value / 2
+value = value % 2
+ㄴ 2로 나눈다음에 나눈 나머지의 값을 정답에 넣는다.
+value += 10
+value -= 5
+value *= 2
+value /= 2
+value %= 2
+ㄴ 위의 식과 동일하게 적용된다.
+* value = value + 10 과  value += 10은 동일한 식으로 인식된다.
+```
+```
+10 % 2 = 0
+11 % 2 = 1
+13 % 3 = 1
+ㄴ 나눈 나머지의 값을 가져감
+```
+```
+var(x, y) = (1,2)
+여러개의 값을 동시에 표현 가능하다.
+```
+
+## Comparison Operators
+```
+비교 연산자
+a == b 같냐?
+a != b 다르냐?
+a > b a가 b보다 크냐?
+a >= b
+a < b
+a <= b
+```
+
+* 문자열에 대한 크기 비교는 AsciiTable을 사용한다.
+
+참조
+![asciifull](https://user-images.githubusercontent.com/62827163/79175598-19d75700-7e39-11ea-8ca7-f88b35782d06.gif)
+
+출처 : http://www.asciitable.com/
+
+## Logical Operators
+
+```
+Lotical and Operator
+true && true > true
+true && false > false
+false && true > false
+false && false > false
+```
+```
+Logical Or Operator
+true || true > true
+true || false > true
+false || true > true
+false || false > false
+```
+```
+!true > false
+!false > true
+```
+
+## Range Operators
+* 범위 연산자
+```
+0...100 > 1부터 100까지
+
+for index in 1...5{
+    print("\(index) times 5 is \(index * 5)")
+}
+5번 반복
+```
+```
+0..<100 > 0부터 99까지
+
+let names = ["Anna", "Alex", "Brian","Jack"]
+let count = names.count
+for i in 0..<count{
+    print("Person \(i + 1) is called \(names[i])")
+}
+0부터 3까지 총 4번 반복 
+count 값은 4
+```
+```
+1... > 1이상의 모든 숫자
+...100 > 100까지의 모든 숫자
+..<100 > 99까지의 모든 숫자
+
+number[2...] > 2이상
+number[...2] > 2이하
+number[..<2] > 2미만
+```
+```
+for index in (1...5) {
+  print("\(index) times 5 is \(index * 5)")
+}
+1부터 시작해서 5까지 (5번)
+1 times 5 is 5
+2 times 5 is 10
+3 times 5 is 15
+4 times 5 is 20
+5 times 5 is 25
+```
+```
+for index in (1...5).reversed() {
+  print("\(index) times 5 is \(index * 5)")
+}
+print()
+
+역으로 5부터 시작 해서 1까지 (5번)
+5 times 5 is 25
+4 times 5 is 20
+3 times 5 is 15
+2 times 5 is 10
+1 times 5 is 5
+```
+```
+for index in stride(from: 5, through: 1, by: -2) {
+  print("\(index) times 5 is \(index * 5)")
+}
+print()
+
+from 5 > 5부터
+through 1 > 1까지
+by -2 > -2씩
+5,3,1 (3번)
+5 times 5 is 25
+3 times 5 is 15
+1 times 5 is 5
+```
+
+# + Function
+
+```
+func timesTable(num: Int) {
+  for i in 1...3 {
+    print("\(num) * \(i) = \(num * i)")
+  }
+}
+timesTable(num: 5)
+timesTable(num: 2)
+
+3번 반복이 된다. 
+timesTable(num: 5)가 되면 
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+timesTable(num:2)
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+```
+```
+함수 중 인풋이 없는 타입
+
+1.
+func hello1() {
+  print("Hello, world!")
+}
+
+hello1() 
+
+2.
+func hello2() -> String {
+  return "Hello, world!"
+}
+
+hello2()
+```
+```
+아웃풋이 없는 타입
+
+1.
+func say(number: Int) {
+  print(number)
+}
+
+say(number: 1)
+
+2.
+func say(word: String) -> Void {
+  print(word)
+}
+
+say(word: "1")
+
+3.
+func say(something: String) -> () {
+  print(something)
+}
+
+say(something: "1")
+
+인풋으로 들어온 숫자만 그대로 출력
+```
+```
+인풋과 아웃푹 둘 다 있는 타입
+
+1.
+func addNumbers(a: Int, b: Int) -> Int {
+  return a + b
+}
+
+addNumbers(a: 10, b: 20) // 30
+addNumbers(a: 3, b: 5) // 8
+
+2.
+func greet(person: String) -> String {
+  let greeting = "Hello, " + person + "!"
+  return greeting
+  
+  // return "Hello, " + person + "!" 위랑 같은 것
+}
+
+greet(person: "Anna")
+greet(person: "Brian")
+```
+```
+리턴 생략
+func addTwoNumbers(a: Int, b: Int) -> Int {
+  a + b
+}
+
+addTwoNumbers(a: 1, b: 2)
+
+a + b 와 return a + b 는 같다.
+```
+```
+* Argument Label
+func someFunction(first: Int, second: Int) {
+  print(first, second)
+}
+someFunction(first: 1, second: 2)
+
+위의 경우처럼 이름이 하나로 쓰인 것은 상관 없지만
+
+func speak(to name: String) {
+  print(name)
+}
+
+speak(to: "Tory")
+
+argument > to
+parameter > name
+* 호출 할 때랑 내부에서 사용할때 구분을 위해서 argument label을 사용한다.
+```
+```
+Default Parameter Values
+
+func functionWithDefault(param: Int = 12) -> Int {
+  return param
+}
+
+functionWithDefault(param: 6)
+  ㄴ param is 6
+
+functionWithDefault()
+  ㄴ param is 12
+
+parameter 기본값이 지정되어 있으면 위의 경우처럼 생략 가능
+```
+```
+Vaeiadic Parameters
+
+func arithmeticAverage(_ numbers: Double...) -> Double { 
+  var total = 0.0
+  for number in numbers {
+    total += number
+  }
+  return total / Double(numbers.count)
+}
+
+arithmeticAverage(1, 2, 3)
+arithmeticAverage(1, 2, 3, 4, 5)
+arithmeticAverage(3, 8.25, 18.75)
+
+함수의 이름 앞에 _ 를 활용하면 입력값에 이름을 생략할 수 있다.
+```
+```
+Nested Function
+```
+```swift
+func chooseFunction(plus: Bool, value: Int) -> Int {
+    func plusFunction(input: Int) -> Int { input + 1 }
+    func minusFunction(input: Int) -> Int { input - 1 }
+
+  if plus {
+    return plusFunction(input: value)
+  } else {
+    return minusFunction(input: value)
+  }
+}
+
+
+var value = 4
+chooseFunction(plus: true, value: value)
+chooseFunction(plus: false, value: value)
+```
