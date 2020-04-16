@@ -614,3 +614,4 @@ var value = 4
 chooseFunction(plus: true, value: value)
 chooseFunction(plus: false, value: value)
 ```
+
