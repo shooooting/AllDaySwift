@@ -16,7 +16,49 @@ limit(number:5)
 * 위의 구조처럼 while을 사용할때는 한계치를 둬서 사용해야 한다.
 * i <= 9 이렇게 i가 9를 넘을 수 없게 한계치를 두었다.
 
+# repeat - while
+```
+while과의 차이는 repeat에서의 반복문이 실행이 되고 while 조건문을 확인하는 구조이다.
+repeat에서 반복적으로 들어가는 조건을 주고 while에는 한계치를 걸어두는 것이 좋다.
+repeat 아래 코드들이 실행이 되고 while 조건문을 확인하게 된다. 
+이때, while 조건문이 참이되면 repeat위치로 다시 돌아가 반복하게 된다.
+while 조건문이 거짓이 되면 그 아래 코드로 진행이 된다.
+```
+```swift
+func soNumber(num: Int) {
+    var i = 1
+    var e = 0
+    repeat {
+        e += i
+        i += 1
+    } while i <= num
+    print(e)
+}
+soNumber(num: 10)
+```
+```
+* 이해
+repeat의 반복문에 먼저 들어가게 되면
+1 + 0 = 1 되면서 처음 e는 1이 되게 된다.
+1 + 1 = 2 가 while 조건문으로 넘어가게 되고 
+2 <= 10 보다 작기 때문에 다시 repeat의 반복문으로 가게 된다.
+2 + 0 = 2 두번째 e는 2
+2 + 1 = 3
+3 <= 10 이렇게 되면서 반복하게 되다가
+i가 11이 되는 순간 repeat으로 반복을 멈추고 
+print(e)로 들어가게 되서 
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55가 나온다.
+```
+* while의 조건이 false가 되면 그 다음 코드가 실행된다.
+* while의 조건이 true이면 repeat으로 돌아가면서 반복하게 된다.
+
 # Optional
+```
+* Swift는 변수를 선언할때 non-Optional 값을 주어야 한다.
+    ㄴ 변수를 선언했으면 어떤 값을 주어야 한다.
+    ex) Int형으로 선언한 변수에는 무조건 정수 타입이 들어가야 한다.
+
+```
 * Optional Binding
     ```
     if let 이나 if var 구문과 주로 같이 쓰임 (guard와도 쓰인다.)
