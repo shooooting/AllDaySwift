@@ -52,6 +52,15 @@ print(e)로 들어가게 되서
 * while의 조건이 false가 되면 그 다음 코드가 실행된다.
 * while의 조건이 true이면 repeat으로 돌아가면서 반복하게 된다.
 
+# Guard
+```
+* 조건들을 확인하여 그 다음의 코드를 실행할지 말지를 결정 짓는다.
+* guard는 항상 else와 같이 쓰인다.
+* guard문의 조건식이 false 값이 나오면 else의 조건식이 실행된다.
+* guard 조건식이 true면 다음 조건식이 실행된다.
+```
+
+
 # Optional
 ```
 * Swift는 변수를 선언할때 non-Optional 값을 주어야 한다.
