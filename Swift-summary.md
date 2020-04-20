@@ -272,7 +272,51 @@ multiClosureParams(closure1: {
 ```
 클래스라는 개념 안에 있는 것이 객체이다.
 붕어빵을 만드는 기계가 클래스이고, 붕어빵은 객체가 된다.
-
+클래스는 공통 특징, 서술.
+오브젝트는 
 
 ```
+# Class
+* 클래스는 달라도 다른 객체로서 서로 다른 속성을 가질 수 있다.
 
+## Class Initialize
+* 초기값이 작성되지 않았을때 값을 초기화 해주는게 필요
+
+
+# 프로퍼티 (Property)
+* 클래스와 구조체를 구성하는 요소 중 하나.
+* 3가지의 종류가 있다.
+    ```
+    ● Stored Property(저장 프로퍼티)
+    ● Computed Property(연산 프로퍼티)
+    ● Type Property(타입 프로퍼티)
+    ```
+## 저장 프로퍼티(Stored Property)
+* 클래스 내에서 선언된 변수나 상수를 부르는 이름
+* 프로퍼티 선언 시 초기값이 할당되지 않은 저장 프로퍼티는 반드시 옵셔널 타입으로 선언해야 한다.
+
+    ㄴ 스위프트에서는 클래스의 프로퍼티에 값이 비어있으면 인스턴스를 생성할 때 무조건 nil값으로 초기화 하기 때문!
+    
+    초기값을 처음부터 할당해 준다면 옵셔널 타입으로 선언할 필요가 없다.
+```swift
+struct FixedLengthRange { // 구조체 
+
+    var firstValue: Int //변수 저장 프로퍼티
+    let length: Int //상수 저장 프로퍼티
+
+}
+
+var rangeOfThreeItems = FixedLengthRange(firstValue: 0, length: 3)
+// FixedLengthRange의 인스턴스 'rangeOfThreeItems'
+rangeOfThreeItems.firstValue = 6
+rangeOfThreeItems.length = 10//error! 상수 저장 프로퍼티라서 에러!
+```
+```swift
+class FixedRengthRange {
+    var firstValue: Int
+    let length: Int
+
+    init(firstValue: Int, length: Int) {
+
+    }
+}
