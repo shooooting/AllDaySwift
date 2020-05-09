@@ -211,6 +211,8 @@ if let task1 = task1 as? Int {
     print(a)
 }
 
+( task1 as! Int ) + ( task1 as! Int)
+
 
 //
 //위와 같이 정의된 변수 task1이 있을 때 다음의 더하기 연산이 제대로 동작하도록 할 것
@@ -239,6 +241,8 @@ if let task2 = task2 as? Int {
     a = task2 + task2
     print(a)
 }
+
+( task2 as! Int ) + ( task2 as! Int )
 
 
 //
