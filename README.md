@@ -8,10 +8,10 @@ All Day Swift (Carm Up)
 [Code](https://github.com/shooooting/AllDaySwift/blob/master/RetainCycle.playground/Contents.swift)
 
 - 20201209 [Struct, Class](https://www.notion.so/Struct-Class-72a5e403ad3540f588c506ca7cd1d7c4)
-[Code]()
+[Code](https://github.com/shooooting/AllDaySwift/blob/master/StructClass.playground/Contents.swift)
 
 - 20201209 [초기화 init](https://www.notion.so/init-e7c4c27997804a43b38a1a42f69e53fd)
-[Code]()
+[Code](https://github.com/shooooting/AllDaySwift/blob/master/init.playground/Contents.swift)
 
 - 20201209 [스위프트 Value Type, Reference Type](https://www.notion.so/Value-type-Reference-type-a4a112d7fc2544c2a9a415e54e1c4a00)
-[Code]()
+[Code](https://github.com/shooooting/AllDaySwift/blob/master/ValueReference.playground/Contents.swift)
